@@ -32,14 +32,19 @@ jobs:
       - name: Docker build php74alpine
         run: |
           docker build ./php74alpine -t betoscopio/php74alpine-ext:latest
-          docker build ./php74alpine-D7 -t betoscopio/betoscopio/php74alpine-d7:latest
+          docker build ./php74debian -t betoscopio/php74debian-ext:latest
+      - name: Docker build php74alpine
+        run: |
+          docker build ./php74alpine-D7 -t betoscopio/php74alpine-d7:latest
+          docker build ./php74alpine-D7-sqlc -t betoscopio/php74alpine-d7:latest-sqlc
       
       - name: Docker build php74alpine D8
         run: |
-          docker build ./php74alpine-D8 -t betoscopio/betoscopio/php74alpine-d8:latest
+          docker build ./php74alpine-D8 -t betoscopio/php74alpine-d8:latest
+          docker build ./php74alpine-D8 -t betoscopio/php74alpine-d8:latest-sqlc
 
       - name: Docker push
         run: |
           docker push betoscopio/php74alpine-ext:latest
-          docker push betoscopio/php74alpine-D7:latest
-          docker push betoscopio/php74alpine-D8:latest
+          docker push betoscopio/php74alpine-d7:latest
+          docker push betoscopio/php74alpine-d8:latest
