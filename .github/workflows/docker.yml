@@ -41,5 +41,5 @@ jobs:
       - name: Docker push
         run: |
           docker push betoscopio/php74alpine-ext:latest
-          docker push betoscopio/php74alpine-d7:latest
-          docker push betoscopio/php74alpine-d8:latest
+          docker push betoscopio/php74alpine-D7:latest
+          docker push betoscopio/php74alpine-D8:latest
