@@ -29,11 +29,11 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: | 
           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-      - name: Docker build php74alpine
+      - name: Docker build php74
         run: |
           docker build ./php74alpine -t betoscopio/php74alpine-ext:latest
           docker build ./php74debian -t betoscopio/php74debian-ext:latest
-      - name: Docker build php74alpine
+      - name: Docker build php74alpine D7
         run: |
           docker build ./php74alpine-D7 -t betoscopio/php74alpine-d7:latest
           docker build ./php74alpine-D7-sqlc -t betoscopio/php74alpine-d7:latest-sqlc
