@@ -33,6 +33,11 @@ jobs:
         run: |
           docker build ./php74alpine -t betoscopio/php74alpine-ext:latest
           docker build ./php74debian -t betoscopio/php74debian-ext:latest
+
+      - name: Docker build php81 basic
+        run: |
+          docker build ./php81alpine -t betoscopio/php74alpine-ext:latest
+    
       - name: Docker build php74alpine D7
         run: |
           docker build ./php74alpine-D7 -t betoscopio/php74alpine-d7:latest
@@ -43,11 +48,19 @@ jobs:
           docker build ./php74alpine-D8 -t betoscopio/php74alpine-d8:latest
           docker build ./php74alpine-D8 -t betoscopio/php74alpine-d8:latest-sqlc
 
+      - name: Docker build php81alpine D9
+        run: |
+          docker build ./php81alpine-D9 -t betoscopio/php81alpine-d9:latest
+          docker build ./php81alpine-D9 -t betoscopio/php81alpine-d9:latest-sqlc
+
       - name: Docker push to Dockerhub
         run: |
           docker push betoscopio/php74alpine-ext:latest
           docker push betoscopio/php74debian-ext:latest
           docker push betoscopio/php74alpine-d7:latest
           docker push betoscopio/php74alpine-d8:latest
+          docker push betoscopio/php81alpine-d9:latest
           docker push betoscopio/php74alpine-d7:latest-sqlc
           docker push betoscopio/php74alpine-d8:latest-sqlc
+          docker push betoscopio/php81alpine-d9:latest
+          docker push betoscopio/php81alpine-d9:latest-sqlc
